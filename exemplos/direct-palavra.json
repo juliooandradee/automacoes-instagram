@@ -1,0 +1,24 @@
+{
+  "name": "Direct · GUIA",
+  "trigger": "direct",
+  "match": "contains",
+  "keywords": "guia",
+  "publicReplies": [],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "message",
+      "text": "Oi! Aqui está o guia que você pediu.",
+      "buttons": [
+        {
+          "id": "l1",
+          "type": "link",
+          "title": "Abrir o guia",
+          "url": "https://exemplo.com/troque-este-link"
+        }
+      ],
+      "next": null,
+      "tag": "pediu-guia"
+    }
+  ]
+}

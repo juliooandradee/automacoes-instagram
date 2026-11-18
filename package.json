@@ -1,0 +1,55 @@
+{
+  "name": "automacoes-instagram",
+  "version": "1.0.0",
+  "description": "Automações do Instagram (comentário em post, Reels e live, Direct, resposta e menção em Story) respondidas no Direct pela API oficial da Meta, no seu próprio Supabase, com um quadro para montar os fluxos. Instaladas e usadas pelo Claude Code ou pelo Codex.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "automacoes": "bin/automacoes.mjs"
+  },
+  "scripts": {
+    "ajuda": "node bin/automacoes.mjs ajuda",
+    "preparar": "node bin/automacoes.mjs preparar",
+    "supabase:projeto": "node bin/automacoes.mjs supabase-projeto",
+    "supabase:instalar": "node bin/automacoes.mjs supabase-instalar",
+    "salvar-chave": "node bin/automacoes.mjs salvar-chave",
+    "status": "node bin/automacoes.mjs status",
+    "configurar": "node bin/automacoes.mjs configurar",
+    "conectar": "node bin/automacoes.mjs conectar",
+    "conferir": "node bin/automacoes.mjs conferir",
+    "quadro": "node bin/automacoes.mjs quadro",
+    "automacoes": "node bin/automacoes.mjs automacoes",
+    "posts": "node bin/automacoes.mjs posts",
+    "salvar": "node bin/automacoes.mjs salvar",
+    "ver": "node bin/automacoes.mjs ver",
+    "testar": "node bin/automacoes.mjs testar",
+    "ativar": "node bin/automacoes.mjs ativar",
+    "pausar": "node bin/automacoes.mjs pausar",
+    "arquivar": "node bin/automacoes.mjs arquivar",
+    "contatos": "node bin/automacoes.mjs contatos",
+    "conversa": "node bin/automacoes.mjs conversa",
+    "responder": "node bin/automacoes.mjs responder",
+    "pausar-contato": "node bin/automacoes.mjs pausar-contato",
+    "apagar-contato": "node bin/automacoes.mjs apagar-contato",
+    "processar": "node bin/automacoes.mjs processar",
+    "desconectar": "node bin/automacoes.mjs desconectar",
+    "test": "node --test --test-concurrency=1 \"tests/*.test.mjs\"",
+    "test:banco": "sh tests/sql/run.sh"
+  },
+  "keywords": [
+    "instagram",
+    "meta",
+    "graph-api",
+    "direct",
+    "automacao",
+    "comentarios",
+    "stories",
+    "supabase",
+    "claude-code",
+    "codex"
+  ]
+}

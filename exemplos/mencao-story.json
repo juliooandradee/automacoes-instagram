@@ -1,0 +1,17 @@
+{
+  "name": "Agradecer menção",
+  "trigger": "story_mention",
+  "match": "any",
+  "keywords": "",
+  "publicReplies": [],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "message",
+      "text": "Obrigado por compartilhar! Fiquei muito feliz com a menção.",
+      "buttons": [],
+      "next": null,
+      "tag": "mencionou"
+    }
+  ]
+}

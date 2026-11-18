@@ -1,0 +1,25 @@
+{
+  "name": "Resposta ao Story",
+  "trigger": "story_reply",
+  "media": "all",
+  "match": "any",
+  "keywords": "",
+  "publicReplies": [],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "message",
+      "text": "Obrigado por responder! Separei este link para você.",
+      "buttons": [
+        {
+          "id": "l1",
+          "type": "link",
+          "title": "Abrir o link",
+          "url": "https://exemplo.com/troque-este-link"
+        }
+      ],
+      "next": null,
+      "tag": "respondeu-story"
+    }
+  ]
+}

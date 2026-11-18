@@ -1,0 +1,67 @@
+{
+  "name": "Direct · MENU com opções",
+  "trigger": "direct",
+  "match": "exact",
+  "keywords": "menu",
+  "publicReplies": [],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "message",
+      "text": "Oi! Como posso ajudar? Escolha uma opção:",
+      "buttons": [
+        {
+          "id": "r1",
+          "type": "reply",
+          "title": "Horários",
+          "target": "b2"
+        },
+        {
+          "id": "r2",
+          "type": "reply",
+          "title": "Endereço",
+          "target": "b3"
+        },
+        {
+          "id": "r3",
+          "type": "reply",
+          "title": "Falar com a equipe",
+          "target": "b4"
+        }
+      ],
+      "next": null,
+      "tag": ""
+    },
+    {
+      "id": "b2",
+      "type": "message",
+      "text": "Atendemos de segunda a sexta, das 8h às 18h.",
+      "buttons": [],
+      "next": null,
+      "tag": "quis-horarios"
+    },
+    {
+      "id": "b3",
+      "type": "message",
+      "text": "Estamos na Rua Exemplo, 123. Veja no mapa:",
+      "buttons": [
+        {
+          "id": "l1",
+          "type": "link",
+          "title": "Abrir o mapa",
+          "url": "https://exemplo.com/troque-este-link"
+        }
+      ],
+      "next": null,
+      "tag": "quis-endereco"
+    },
+    {
+      "id": "b4",
+      "type": "handoff",
+      "text": "",
+      "buttons": [],
+      "next": null,
+      "tag": "quer-atendimento"
+    }
+  ]
+}

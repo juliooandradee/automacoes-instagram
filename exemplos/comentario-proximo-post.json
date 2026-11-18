@@ -1,0 +1,46 @@
+{
+  "name": "Próximo post · comente QUERO",
+  "trigger": "comment",
+  "media": "next",
+  "match": "contains",
+  "keywords": "quero",
+  "publicReplies": [
+    "Te chamei no Direct!",
+    "Te mandei uma mensagem no Direct!",
+    "Oi! Te chamei no Direct.",
+    "Já te mandei uma mensagem no privado!",
+    "Dá uma olhadinha no seu Direct!"
+  ],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "message",
+      "text": "Oi! Que bom que você comentou. Toque no botão que eu te mando o link aqui.",
+      "buttons": [
+        {
+          "id": "r1",
+          "type": "reply",
+          "title": "Quero o link",
+          "target": "b2"
+        }
+      ],
+      "next": null,
+      "tag": ""
+    },
+    {
+      "id": "b2",
+      "type": "message",
+      "text": "Aqui está! Qualquer dúvida, é só responder esta mensagem.",
+      "buttons": [
+        {
+          "id": "l1",
+          "type": "link",
+          "title": "Abrir o link",
+          "url": "https://exemplo.com/troque-este-link"
+        }
+      ],
+      "next": null,
+      "tag": "recebeu-link"
+    }
+  ]
+}

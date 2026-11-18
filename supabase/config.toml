@@ -1,0 +1,7 @@
+# Configuração mínima para a CLI do Supabase (npx supabase ...).
+project_id = "automacoes-instagram"
+
+# A função confere sozinha quem chama: a Meta (assinatura do webhook), o agendador (segredo próprio),
+# o quadro e a linha de comando (chave secreta do projeto). Por isso a verificação de JWT fica desligada.
+[functions.automacoes]
+verify_jwt = false

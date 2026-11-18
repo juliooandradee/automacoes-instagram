@@ -1,0 +1,40 @@
+{
+  "name": "Live · comente EU QUERO",
+  "trigger": "comment",
+  "media": "live",
+  "match": "contains",
+  "keywords": "eu quero",
+  "publicReplies": [],
+  "blocks": [
+    {
+      "id": "b1",
+      "type": "message",
+      "text": "Oi! Vi seu comentário na live. Toque no botão que eu te mando o link aqui.",
+      "buttons": [
+        {
+          "id": "r1",
+          "type": "reply",
+          "title": "Quero o link",
+          "target": "b2"
+        }
+      ],
+      "next": null,
+      "tag": ""
+    },
+    {
+      "id": "b2",
+      "type": "message",
+      "text": "Aqui está! Qualquer dúvida, é só responder esta mensagem.",
+      "buttons": [
+        {
+          "id": "l1",
+          "type": "link",
+          "title": "Abrir o link",
+          "url": "https://exemplo.com/troque-este-link"
+        }
+      ],
+      "next": null,
+      "tag": "recebeu-link"
+    }
+  ]
+}
