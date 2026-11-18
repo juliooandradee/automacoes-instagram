@@ -79,6 +79,7 @@ npm run ajuda
 - Testes automáticos do modelo das automações e de ponta a ponta (`npm test`): a função de verdade contra o banco de verdade num Postgres local, com a Meta simulada — conexão pela Página, comentário com botão e link rastreado, Direct no modo teste, Story com "passar para mim", resposta pelo celular pausando a automação, janela de 24 horas, assinatura do webhook, política de privacidade e exclusão de dados.
 - Testes do banco (`npm run test:banco`) e a migração aplicada duas vezes seguidas sem erro.
 - O quadro e a linha de comando usados de ponta a ponta contra essa mesma função local.
+- Num projeto novo do Supabase (plano grátis): a migração aplicada duas vezes, o verificador de segurança do Supabase sem nenhum alerta, a função publicada respondendo à verificação do webhook, à assinatura da Meta, à política de privacidade, aos links e às chamadas sem chave; o agendador acordando a função a cada minuto; e um Direct de teste percorrendo o caminho inteiro até a API de verdade da Meta (que recusou a chave falsa do teste, e a conexão ficou marcada para reconectar, como previsto).
 - As regras de envio vêm de um quadro de automações que já roda num perfil real. A instalação completa com um app novo da Meta, do zero, ainda não foi feita com este pacote: se algum menu da Meta estiver diferente, o agente procura pelo nome da permissão.
 
 ## Para quem quer mexer no código

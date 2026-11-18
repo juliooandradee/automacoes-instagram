@@ -48,6 +48,7 @@ create table if not exists instagram_automations.oauth_requests (
   account_id uuid not null references instagram_automations.accounts(id) on delete cascade,
   expires_at timestamptz not null
 );
+create index if not exists oauth_requests_account_idx on instagram_automations.oauth_requests (account_id);
 
 create table if not exists instagram_automations.pending_tokens (
   account_id uuid primary key references instagram_automations.accounts(id) on delete cascade,
@@ -128,6 +129,8 @@ create table if not exists instagram_automations.runs (
 );
 create index if not exists runs_contact_idx on instagram_automations.runs (contact_id, created_at desc);
 create index if not exists runs_automation_idx on instagram_automations.runs (automation_id);
+create index if not exists runs_account_idx on instagram_automations.runs (account_id);
+create index if not exists runs_event_idx on instagram_automations.runs (event_id);
 
 create table if not exists instagram_automations.messages (
   id uuid primary key default gen_random_uuid(),
@@ -156,6 +159,8 @@ create unique index if not exists messages_provider_idx on instagram_automations
   where provider_id is not null;
 create index if not exists messages_contact_idx on instagram_automations.messages (contact_id, created_at desc);
 create index if not exists messages_queue_idx on instagram_automations.messages (created_at) where status in ('queued', 'sending');
+create index if not exists messages_automation_idx on instagram_automations.messages (automation_id, created_at desc);
+create index if not exists messages_run_idx on instagram_automations.messages (run_id);
 
 -- 4. Links rastreados (cada botão de link tem seu próprio código) e cliques.
 create table if not exists instagram_automations.links (
@@ -170,6 +175,9 @@ create table if not exists instagram_automations.link_clicks (
   token_hash text not null references instagram_automations.links(token_hash) on delete cascade,
   clicked_at timestamptz not null default now()
 );
+create index if not exists links_message_idx on instagram_automations.links (message_id);
+create index if not exists links_automation_idx on instagram_automations.links (automation_id);
+create index if not exists link_clicks_token_idx on instagram_automations.link_clicks (token_hash);
 
 -- 5. Até onde já lemos os comentários de cada publicação (a busca roda a cada minuto).
 create table if not exists instagram_automations.comment_cursors (
@@ -178,6 +186,7 @@ create table if not exists instagram_automations.comment_cursors (
   newest_comment_at timestamptz,
   checked_at timestamptz not null default now()
 );
+create index if not exists comment_cursors_account_idx on instagram_automations.comment_cursors (account_id);
 
 revoke all on all tables in schema instagram_automations from public;
 
